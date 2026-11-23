@@ -1,3 +1,4 @@
+
 """
 config.py
 ---------
@@ -23,7 +24,7 @@ DEBUG_AUDIO_DIR = OUTPUT_DIR / "debug_audio"
 SAMPLE_RATE = 16000     # Whisper expects 16 kHz mono. Do not change.
 BLOCK_MS = 30           # audio is processed in blocks of 30 ms
 MIC_DEVICE = None       # None = system default mic. Otherwise put the device
-                        # number printed by tests/test_mic_levels.py
+# number printed by tests/test_mic_levels.py
 
 # ----------------------------------------------------------------------------
 # Whisper (faster-whisper)
@@ -62,3 +63,21 @@ MAX_UTTERANCE_S = 12.0      # safety cap for a single utterance
 # Debugging
 # ----------------------------------------------------------------------------
 SAVE_DEBUG_AUDIO = True     # save each utterance as .wav so you can listen to it
+
+# ----------------------------------------------------------------------------
+# Command parser
+# ----------------------------------------------------------------------------
+# Any of these (even slightly mis-transcribed) starts an incident.
+TRIGGER_PHRASES = [
+    "take a photo",
+    "take photo",
+    "take a picture",
+    "take a pic",
+    "take the photo",
+    "report violation",
+    "report a violation",
+    "mark incident",
+]
+TRIGGER_MIN_SCORE = 85      # 0-100. Lower = catches more mis-hearings, more false triggers
+FUZZY_MIN_SCORE = 85        # 0-100. How close a mis-written brand/model must be
+FUZZY_MIN_WORD_LEN = 5      # fuzzy matching only for words at least this long
