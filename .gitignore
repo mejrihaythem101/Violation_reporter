@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+models/
+output/
+*.wav
+*.mp4
+.env
+.vscode/
