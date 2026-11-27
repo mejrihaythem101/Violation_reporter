@@ -15,7 +15,7 @@ from pathlib import Path
 # ----------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent
 MODELS_DIR = BASE_DIR / "models"            # Whisper (and later YOLO) weights
-OUTPUT_DIR = BASE_DIR / "output"            # incident folders will go here
+OUTPUT_DIR = BASE_DIR / "output"            # incident folders will go herepython -c "
 DEBUG_AUDIO_DIR = OUTPUT_DIR / "debug_audio"
 
 # ----------------------------------------------------------------------------
